@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Repository</title>
+    <link rel="stylesheet" href="vocab/themes/blue/style.css" type="text/css" media="print, projection, screen" />
+    <script src="vocab/js/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="vocab/js/bootstrap.js"></script>
+    <script type="text/javascript" id="js">
+	    $(document).ready(function() 
+		    { 
+		    	$("#tablesorter-demo").tablesorter(); 
+		    	$("#tablesorter-demo").stickyTableHeaders(); 
+		    	$('[data-toggle="tooltip"]').tooltip(); 
+		    } 
+	    ); 
+    </script>
+
+    <!-- Le styles -->
+    <link href="vocab/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+    
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="vocab/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <!-- Jumbotron -->
+      <div class="jumbotron">
+        <h1>Wikidata dumps</h1>
+        <p class="lead">A page for sharing the Wikidata artifacts that are frequently used by the Center on Knowledge Graphs at USC.</p>
+      </div>
+      <hr>
+<div class="row"> 
+</div>
+<br>
+<table id="tablesorter-demo" class="tablesorter table table-hover table-responsive">
+<thead>
+<tr>
+<th class="col-md-1">Name</th>
+<th class="col-md-3">Description</th>
+<th class="col-md-1">Size</th>
+<th class="col-md-1">Version </th>
+<th class="col-md-1">Properties</th>
+<th class="col-md-1">Language</th>
+<th class="col-md-1">Format</th>
+<th class="col-md-1">Date</th>
+<th class="col-md-1">License</th>
+<th class="col-md-1">Links</th></tr>
+</thead>
+<tbody>
+<tr id="tr1">
+<td> edges.all</td>
+<td>
+A file with all edges in Wikidata.</td>
+<td>16.0 GB</td><td><span class="label label-primary">20200504</td><td><span class="label label-default">all</td></td><td><span class="label label-primary">all</span></td>
+<td>kgtk (.gz)</td><td>5/20/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
+<td>
+<a href="https://drive.google.com/file/d/1k56ly2dyssyb9i6CNnm4r0_UHnL4uQUL/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true"></span></a>&nbsp;<a href="https://drive.google.com/file/d/1Aq3HO3OJvcifG_P9XHcFpVqUjaAv01Cb/view?usp=sharing"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a></td>
+</tr><tr id="tr2">
+<td> nodes.all</td>
+<td>
+A file with all nodes in Wikidata, including their English labels and aliases.</td>
+<td>2.0 GB</td><td><span class="label label-primary">20200504</td><td><span class="label label-default">all</td></td><td><span class="label label-primary">en</span></td>
+<td>kgtk (.gz)</td><td>5/11/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
+<td>
+<a href="https://drive.google.com/file/d/1kTiyCHgH0HSmrDUjvBCBLtCGXX6vPSPO/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true"></span></a>&nbsp;<a href="https://drive.google.com/file/d/1Aq3HO3OJvcifG_P9XHcFpVqUjaAv01Cb/view?usp=sharing"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a></td>
+</tr><tr id="tr3">
+<td> qualifiers.all</td>
+<td>
+A file with all qualifiers in Wikidata.</td>
+<td>2.0 GB</td><td><span class="label label-primary">20200504</td><td><span class="label label-default">all</td></td><td><span class="label label-primary">all</span></td>
+<td>kgtk (.gz)</td><td>5/11/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
+<td>
+<a href="https://drive.google.com/file/d/1k7Rd5UQ87FctjbXPyLIowweIYgjJtP8I/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true"></span></a>&nbsp;<a href="https://drive.google.com/file/d/1Aq3HO3OJvcifG_P9XHcFpVqUjaAv01Cb/view?usp=sharing"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a></td>
+</tr><tr id="tr4">
+<td> nodes.pagerank</td>
+<td>
+A file with only PageRank values for each node in Wikidata.</td>
+<td>886.0 MB</td><td><span class="label label-primary">20200504</td><td><span class="label label-default">all</td></td><td><span class="label label-primary"></span></td>
+<td>kgtk (.gz)</td><td>6/5/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
+<td>
+<a href="https://drive.google.com/file/d/1l500ihG2vNdp7VDZ8A-U2Qrry67Ua--i/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true"></span></a>&nbsp;<a href="https://drive.google.com/file/d/1Aq3HO3OJvcifG_P9XHcFpVqUjaAv01Cb/view?usp=sharing"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a></td>
+</tr><tr id="tr5">
+<td> edges.P31</td>
+<td>
+A file with all P31 (instance-of) edges in Wikidata.</td>
+<td>500.0 MB</td><td><span class="label label-primary">20200504</td><td><span class="label label-default">P31</td></td><td><span class="label label-primary">all</span></td>
+<td>kgtk (.gz)</td><td>5/11/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
+<td>
+<a href="https://drive.google.com/file/d/1kIvzzi3jaCO4EJwwyHw-Q_hf3Ge0iG0y/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true"></span></a>&nbsp;<a href="https://drive.google.com/file/d/1Aq3HO3OJvcifG_P9XHcFpVqUjaAv01Cb/view?usp=sharing"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a></td>
+</tr></tbody></table>
+<hr>
+           <footer class="footer">
+	        Latest revision September, 2020
+      </footer>      </div>
+    </div> <!-- /container -->
