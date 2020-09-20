@@ -4,7 +4,9 @@ Repository to describe the different Wikidata releases in KGTK format that may b
 We will be updating the KGTK releases for Wikidata files here soon.
 
 ## Adding a new file
-Simply fill in a new row in the `dumps.csv` file of the repository. Then regenerate the html of the script and you are ready to go
+Simply fill in a new row in the `dumps.csv` file of the repository. Then regenerate the html of the script:
+
+`java -jar WikidataDumps-1.0-SNAPSHOT-jar-with-dependencies.jar -i pathToCSV -o website`
 
 ## Website
 
