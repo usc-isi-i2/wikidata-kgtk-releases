@@ -1,8 +1,6 @@
 package usc.isi.wikidatadumps;
 
-import java.io.File;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * Class that defines the attributes of a vocabulary
@@ -184,9 +182,16 @@ public class Dataset {
             name = "Undefined";
         }
         
-        html +=("<td> "+ name );
+        html +=("<td> " );
+        if(downloadLink!=null && !downloadLink.equals("")){
+            html+="<a href=\""+downloadLink+"\">"+name+"</a>";
+        }
+        else{
+            html+=name;
+        }
+        
         if(previewLink!=null && !previewLink.equals("")){
-            html+="&nbsp;<a href=\""+previewLink+"\"><span class=\"glyphicon glyphicon-search\" aria-hidden=\"true\" ></span></a>";
+            html+="&nbsp;<a href=\""+previewLink+"\"><span class=\"glyphicon glyphicon-search\" aria-hidden=\"true\" data-toggle=\"tooltip\" title=\"Previsualize\" ></span></a>";
         }
         html+="</td>\n";
         //description
@@ -238,7 +243,7 @@ public class Dataset {
         html+="<td>";
         if (properties!=null){
             for(String p:properties){
-                html+="<span class=\"label label-default\">"+p+"</td>";
+                html+="<span class=\"label label-primary\">"+p+"</td>";
             }
         }else{
             html+="<span class=\"label label-default\">undefined</td>";
@@ -280,13 +285,13 @@ public class Dataset {
         html+=("<td>\n");
         //links: download, script, source   
         if(downloadLink!=null && !downloadLink.equals("")){
-            html+="<a href=\""+downloadLink+"\"><span class=\"glyphicon glyphicon-download\" aria-hidden=\"true\"></span></a>&nbsp;";
+            html+="<a href=\""+downloadLink+"\"><span class=\"glyphicon glyphicon-download\" aria-hidden=\"true\" data-toggle=\"tooltip\" title=\"Download\"></span></a>&nbsp;";
         }
         if(statistics!=null && !statistics.equals("")){
-            html+="<a href=\""+statistics+"\"><span class=\"glyphicon glyphicon-stats\" aria-hidden=\"true\"></span></a>&nbsp;";
+            html+="<a href=\""+statistics+"\"><span class=\"glyphicon glyphicon-stats\" aria-hidden=\"true\" data-toggle=\"tooltip\" title=\"Statistics\"></span></a>&nbsp;";
         }
         if(scriptLink!=null && !scriptLink.equals("")){
-            html+="<a href=\""+scriptLink+"\"><span class=\"glyphicon glyphicon-wrench\" aria-hidden=\"true\"></span></a>";
+            html+="<a href=\""+scriptLink+"\"><span class=\"glyphicon glyphicon-wrench\" aria-hidden=\"true\" data-toggle=\"tooltip\" title=\"Download script\"></span></a>";
         }
         html+=("</td>\n");
    

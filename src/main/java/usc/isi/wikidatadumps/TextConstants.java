@@ -32,19 +32,8 @@ public class TextConstants {
 			"    <meta charset=\"UTF-8\">\n" + 
 			"    <title>"+repoName+"</title>\n" + 
 			"    <link rel=\"stylesheet\" href=\"vocab/themes/blue/style.css\" type=\"text/css\" media=\"print, projection, screen\" />\n" +
-		    "    <script src=\"vocab/js/jquery-1.11.0.js\"></script>\n" +
-			"    <script type=\"text/javascript\" src=\"vocab/js/bootstrap.js\"></script>\n" +
-			"    <script type=\"text/javascript\" id=\"js\">\n" +
-			"	    $(document).ready(function() \n" +
-			"		    { \n" +
-			"		    	$(\"#tablesorter-demo\").tablesorter(); \n" +
-			"		    	$(\"#tablesorter-demo\").stickyTableHeaders(); \n" +
-			"		    	$('[data-toggle=\"tooltip\"]').tooltip(); \n" +
-
-			"		    } \n" +
-			"	    ); \n" +
-			"    </script>\n" +
-
+                        "    <script src=\"vocab/js/jquery.min.js\"></script>\n" +
+                        "    <script type=\"text/javascript\" src=\"vocab/js/bootstrap.min.js\"></script>"+
 			"\n" + 
 			"    <!-- Le styles -->\n" + 
 			"    <link href=\"vocab/css/bootstrap.css\" rel=\"stylesheet\">\n" + 
@@ -137,7 +126,7 @@ public class TextConstants {
                     "    	Built with <a target=\"_blank\" href=\"http://getbootstrap.com/\">Bootstrap</a>\n" +
                     " 	        <br>\n" +*/
                    // "	        Latest revision August, 2016\n" +
-            "	        Latest revision "+(new SimpleDateFormat("MMMM", Locale.UK).format(new Date(Calendar.getInstance().getTimeInMillis())))+", "+new GregorianCalendar().get(Calendar.YEAR)+"\n" +
+            "	        Latest revision "+(new SimpleDateFormat("MMM d, yyyy", Locale.UK).format(new Date(Calendar.getInstance().getTimeInMillis())))+"\n" +
                    /* "        </div>\n" +
                     "		<div class=\"col-md-2\">\n" +
                     "			<a href=\"https://github.com/dgarijo/vocabLite\"><img width=\"140px\"src=\"vocab/logoLite.png\"></img></a>\n" +
@@ -147,7 +136,14 @@ public class TextConstants {
                     "" +
                     //"      </footer>\n" +
                     "" +
-                    "    </div> <!-- /container -->\n";
+                    "</div> <!-- /container -->\n"+ 
+                    " <script>\n" +
+                    "$(document).ready(function(){\n" +
+                    "  $('[data-toggle=\"tooltip\"]').tooltip();   \n" +
+                    "});\n" +
+                    "</script>"+
+                    "</body>"+
+                    "</html>";
                     
     
     public static final String tableHeadVocab= 
@@ -177,63 +173,63 @@ public class TextConstants {
     public static final String tableEnd = "</tbody></table>\n";
     
 
-    public static String getScriptForFilteringAndEndDocument(ArrayList<String> domains){
-        String s = "<script>\n"+
-		"$(function() {\n"+
-		"var availableTags = [\n";
-                if(!domains.isEmpty()){
-                    s+="\""+domains.get(0)+"\"\n";
-                    for (int i=1; i<domains.size();i++ ){
-			s+=", \""+domains.get(i)+"\"";
-                    }
-                }
-		s+="];\n"+"$( \"#tags\" ).autocomplete({\n"+
-		"source: availableTags,\n"+
-		"select: function(event, ui) {\n"+		
-		"hideRows(ui.item.value);\n"+
-		"}\n"+
-		"});\n"+
-		"});\n"+
-		"</script>\n"+
-		"<script>\n"+
-		"function hideRows(text) {\n"+
-		"index = 1;\n"+
-		"tr = document.getElementById('tr'+index);\n"+
-		"while (tr!=null){\n"+
-		"valores = document.getElementById('inp'+index).value;\n"+
-		"if (valores.indexOf(text+'--')==-1){\n"+
-		"tr.style.display='none';\n"+
-		"}\n"+
-		"index++;\n"+
-		"tr = document.getElementById('tr'+index);\n"+
-		"}\n"+
-		"document.getElementById('remButt').style.display='';\n"+
-		"}\n"+
-		"\n"+
-		"function showRows() {	\n"+
-		"index = 1;\n"+
-		"tr = document.getElementById('tr'+index);\n"+
-		"while (tr!=null){\n"+
-		"tr.style.display='';\n"+		
-		"index++;\n"+
-		"tr = document.getElementById('tr'+index);\n"+
-		"}\n"+
-		"butt = document.getElementById('remButt').style.display='none';\n"+
-		"}\n"+
-		"</script>"+
-               //to add Google analytics here.
-               // "<script>\n" +
-               // "(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\n" +
-               // "m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\n" +
-               // "})(window,document,'script','//www.google-analytics.com/analytics.js','ga');\n" +
-               // "ga('create', 'UA-48904250-1', 'linkeddata.es');\n" +
-               // "ga('send', 'pageview');\n" +
-               // "</script>\n" +
-                "" +
-                "  </body>\n" +
-                "</html>\n";
-        return s;
-    }
+//    public static String getScriptForFilteringAndEndDocument(ArrayList<String> domains){
+//        String s = "<script>\n"+
+//		"$(function() {\n"+
+//		"var availableTags = [\n";
+//                if(!domains.isEmpty()){
+//                    s+="\""+domains.get(0)+"\"\n";
+//                    for (int i=1; i<domains.size();i++ ){
+//			s+=", \""+domains.get(i)+"\"";
+//                    }
+//                }
+//		s+="];\n"+"$( \"#tags\" ).autocomplete({\n"+
+//		"source: availableTags,\n"+
+//		"select: function(event, ui) {\n"+		
+//		"hideRows(ui.item.value);\n"+
+//		"}\n"+
+//		"});\n"+
+//		"});\n"+
+//		"</script>\n"+
+//		"<script>\n"+
+//		"function hideRows(text) {\n"+
+//		"index = 1;\n"+
+//		"tr = document.getElementById('tr'+index);\n"+
+//		"while (tr!=null){\n"+
+//		"valores = document.getElementById('inp'+index).value;\n"+
+//		"if (valores.indexOf(text+'--')==-1){\n"+
+//		"tr.style.display='none';\n"+
+//		"}\n"+
+//		"index++;\n"+
+//		"tr = document.getElementById('tr'+index);\n"+
+//		"}\n"+
+//		"document.getElementById('remButt').style.display='';\n"+
+//		"}\n"+
+//		"\n"+
+//		"function showRows() {	\n"+
+//		"index = 1;\n"+
+//		"tr = document.getElementById('tr'+index);\n"+
+//		"while (tr!=null){\n"+
+//		"tr.style.display='';\n"+		
+//		"index++;\n"+
+//		"tr = document.getElementById('tr'+index);\n"+
+//		"}\n"+
+//		"butt = document.getElementById('remButt').style.display='none';\n"+
+//		"}\n"+
+//		"</script>"+
+//               //to add Google analytics here.
+//               // "<script>\n" +
+//               // "(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\n" +
+//               // "m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\n" +
+//               // "})(window,document,'script','//www.google-analytics.com/analytics.js','ga');\n" +
+//               // "ga('create', 'UA-48904250-1', 'linkeddata.es');\n" +
+//               // "ga('send', 'pageview');\n" +
+//               // "</script>\n" +
+//                "" +
+//                "  </body>\n" +
+//                "</html>\n";
+//        return s;
+//    }
     
     
     //reporting classes, properties, errors
