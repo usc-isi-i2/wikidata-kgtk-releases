@@ -1,0 +1,10 @@
+id	label	type	description	alias
+Q8	'happiness'@en	item	'mental or emotional state of well-being characterized by pleasant emotions'@en	'😄'@en|':)'@en|'😃'@en|'joy'@en|'happy'@en|'Happiness'@en
+Q24	'Jack Bauer'@en	item	'character from the television series 24'@en	
+Q1868	'Paul Otlet'@en	item	'Belgian author, librarian and colonial thinker'@en	'Paul Marie Ghislain Otlet'@en|'Paul Marie Otlet'@en
+Q45	'Portugal'@en	item	'sovereign state in southwestern Europe'@en	'Portuguese Republic'@en|'PT'@en|'pt'@en|'🇵🇹'@en
+Q58	'penis'@en	item	'primary sexual organ that male animals use to inseminate sexually receptive mates (females or hermaphrodites) during copulation, occurring in many (but not all) animals, including humans'@en	
+Q75	'Internet'@en	item	'global system of connected computer networks'@en	'the Internet'@en|'internet'@en|'Net'@en|'the Net'@en|'global Internet'@en
+Q103	'Supercalifragilisticexpialidocious'@en	item	'song from the film and musical Mary Poppins'@en	
+Q140	'lion'@en	item	'species of big cat'@en	'African lion'@en|'Asiatic Lion'@en|'lion'@en
+Q147	'kitten'@en	item	'young of a cat'@en	'kitty'@en
