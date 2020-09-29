@@ -39,7 +39,7 @@ public class Dataset {
         this.name = name;
         this.description = description;
     	if (description.length() > TextConstants.SHORT_DESC_LENGTH){
-    		int nextSpace = description.indexOf(" ", TextConstants.SHORT_DESC_LENGTH);
+    		int nextSpace = description.indexOf(" ", TextConstants.SHORT_DESC_LENGTH-15);
     		this.firstPartDesc = this.description.substring(0, nextSpace);
     		this.secondPartDesc = this.description.substring(nextSpace);
     	}
@@ -179,7 +179,8 @@ public class Dataset {
         //name
         String name = this.getName();
         if(name == null || name.equals("")){
-            name = "Undefined";
+            return"";
+            //if there is no name, return empty row
         }
         
         html +=("<td> " );
@@ -243,10 +244,10 @@ public class Dataset {
         html+="<td>";
         if (properties!=null){
             for(String p:properties){
-                html+="<span class=\"label label-primary\">"+p+"</td>";
+                html+="<span class=\"label label-primary\">"+p+"</span> &nbsp;";
             }
         }else{
-            html+="<span class=\"label label-default\">undefined</td>";
+            html+="<span class=\"label label-default\">undefined</span>";
         }
         html+="</td>";
         //Natural Language

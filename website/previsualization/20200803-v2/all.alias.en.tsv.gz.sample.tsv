@@ -1,0 +1,20 @@
+id	node1	label	node2
+Q45-alias-en-1	Q45	alias	'Portuguese Republic'@en
+Q45-alias-en-2	Q45	alias	'PT'@en
+Q45-alias-en-3	Q45	alias	'pt'@en
+Q45-alias-en-4	Q45	alias	'🇵🇹'@en
+Q140-alias-en-1	Q140	alias	'African lion'@en
+Q140-alias-en-2	Q140	alias	'Asiatic Lion'@en
+Q183-alias-en-ca-1	Q183	alias	'Deutschland'@en-ca
+Q183-alias-en-ca-2	Q183	alias	'de'@en-ca
+Q183-alias-en-1	Q183	alias	'FRG'@en
+Q183-alias-en-2	Q183	alias	'BRD'@en
+Q183-alias-en-3	Q183	alias	'Bundesrepublik Deutschland'@en
+Q183-alias-en-4	Q183	alias	'Federal Republic of Germany'@en
+Q183-alias-en-5	Q183	alias	'de'@en
+Q183-alias-en-6	Q183	alias	'Deutschland'@en
+Q183-alias-en-7	Q183	alias	'GER'@en
+Q183-alias-en-8	Q183	alias	'BR Deutschland'@en
+Q183-alias-en-gb-1	Q183	alias	'Deutschland'@en-gb
+Q183-alias-en-gb-2	Q183	alias	'de'@en-gb
+Q317-alias-en-1	Q317	alias	'dictature'@en

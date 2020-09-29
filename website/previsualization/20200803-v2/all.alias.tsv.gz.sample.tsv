@@ -1,0 +1,20 @@
+id	node1	label	node2
+Q45-alias-en-1	Q45	alias	'Portuguese Republic'@en
+Q45-alias-en-2	Q45	alias	'PT'@en
+Q45-alias-en-3	Q45	alias	'pt'@en
+Q45-alias-en-4	Q45	alias	'🇵🇹'@en
+Q45-alias-nl-1	Q45	alias	'Portugese Republiek'@nl
+Q45-alias-nl-2	Q45	alias	'PT'@nl
+Q45-alias-nl-3	Q45	alias	'PRT'@nl
+Q45-alias-es-1	Q45	alias	'República Portuguesa'@es
+Q45-alias-es-2	Q45	alias	'República de Portugal'@es
+Q45-alias-es-3	Q45	alias	'Republica Portuguesa'@es
+Q45-alias-es-4	Q45	alias	'Republica de Portugal'@es
+Q45-alias-be-tarask-1	Q45	alias	'Партуґалія'@be-tarask
+Q45-alias-nan-1	Q45	alias	'Portugal'@nan
+Q45-alias-nan-2	Q45	alias	'Phû-thô-gâ'@nan
+Q45-alias-nan-3	Q45	alias	'Portuguesa'@nan
+Q45-alias-nan-4	Q45	alias	'Phô-tô-gâ'@nan
+Q45-alias-zh-hans-1	Q45	alias	'葡萄牙共和国'@zh-hans
+Q45-alias-zh-hans-2	Q45	alias	'葡国'@zh-hans
+Q45-alias-zh-hant-1	Q45	alias	'葡萄牙共和國'@zh-hant

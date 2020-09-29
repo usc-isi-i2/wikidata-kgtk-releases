@@ -1,0 +1,20 @@
+id	node1	label	node2
+Q45-label-en	Q45	label	'Portugal'@en
+Q45-label-en-gb	Q45	label	'Portugal'@en-gb
+Q45-label-en-ca	Q45	label	'Portugal'@en-ca
+Q140-label-en-ca	Q140	label	'Lion'@en-ca
+Q140-label-en-gb	Q140	label	'lion'@en-gb
+Q140-label-en	Q140	label	'lion'@en
+Q183-label-en-gb	Q183	label	'Germany'@en-gb
+Q183-label-en	Q183	label	'Germany'@en
+Q183-label-en-ca	Q183	label	'Germany'@en-ca
+Q317-label-en	Q317	label	'dictatorship'@en
+Q317-label-en-ca	Q317	label	'Dictatorship'@en-ca
+Q317-label-en-gb	Q317	label	'dictatorship'@en-gb
+Q433-label-en	Q433	label	'Gmina Kurów'@en
+Q433-label-en-ca	Q433	label	'Gmina Kurów'@en-ca
+Q433-label-en-gb	Q433	label	'Gmina Kurów'@en-gb
+Q514-label-en	Q514	label	'anatomy'@en
+Q514-label-en-ca	Q514	label	'Anatomy'@en-ca
+Q514-label-en-gb	Q514	label	'anatomy'@en-gb
+Q595-label-en	Q595	label	'The Intouchables'@en
