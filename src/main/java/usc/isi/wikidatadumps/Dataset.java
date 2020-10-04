@@ -235,26 +235,26 @@ public class Dataset {
         html+=("</td>");
         
         //version
-        if(version!=null && !version.equals("")){
-            html+="<td><span class=\"label label-primary\">"+version+"</td>";
-        }else{
-            html+="<td><span class=\"label label-default\">undefined</td>";
-        }
-        //properties
-        html+="<td>";
-        if (properties!=null){
-            for(String p:properties){
-                html+="<span class=\"label label-primary\">"+p+"</span> &nbsp;";
-            }
-        }else{
-            html+="<span class=\"label label-default\">undefined</span>";
-        }
-        html+="</td>";
+//        if(version!=null && !version.equals("")){
+//            html+="<td><span class=\"label label-primary\">"+version+"</td>";
+//        }else{
+//            html+="<td><span class=\"label label-default\">undefined</td>";
+//        }
+//        //properties
+//        html+="<td>";
+//        if (properties!=null){
+//            for(String p:properties){
+//                html+="<span class=\"label label-primary\">"+p+"</span> &nbsp;";
+//            }
+//        }else{
+//            html+="<span class=\"label label-default\">undefined</span>";
+//        }
+//        html+="</td>";
         //Natural Language
         html+=("<td>");
         if(languages!=null){
             for(String lang: languages){
-                html+="<span class=\"label label-primary\">" + lang + "</span>";
+                html+="<span class=\"label label-primary\">" + lang + "</span>&nbsp;";
             }
         }else{
             html+="<span class=\"label label-default\">Undefined</span>";
@@ -269,20 +269,20 @@ public class Dataset {
             html+="<td>"+creationDate+"</td>";
         }
         //License
-        html+=("<td>");
-        if (this.licenseTitle == null || this.licenseTitle.toLowerCase().equals("unknown")){      
-            html+= "<span class=\"label label-default\">Undefined</span>";        
-        }
-        else{
-           String licenseTitleReduced = licenseTitle.replace("Creative Commons ", "");
-           if(licenseTitleReduced.length()>TextConstants.shortLicense){
-               licenseTitleReduced = licenseTitleReduced.substring(0, TextConstants.shortLicense-1);
-               licenseTitleReduced += "...";
-           }
-           html+= "<a href=\"" + this.license + "\" target=\"_blank\"> <span class=\"label label-success\">" + licenseTitleReduced + "</span> </a>";        
-        }
-
-        html+=("</td>\n");
+//        html+=("<td>");
+//        if (this.licenseTitle == null || this.licenseTitle.toLowerCase().equals("unknown")){      
+//            html+= "<span class=\"label label-default\">Undefined</span>";        
+//        }
+//        else{
+//           String licenseTitleReduced = licenseTitle.replace("Creative Commons ", "");
+//           if(licenseTitleReduced.length()>TextConstants.shortLicense){
+//               licenseTitleReduced = licenseTitleReduced.substring(0, TextConstants.shortLicense-1);
+//               licenseTitleReduced += "...";
+//           }
+//           html+= "<a href=\"" + this.license + "\" target=\"_blank\"> <span class=\"label label-success\">" + licenseTitleReduced + "</span> </a>";        
+//        }
+//
+//        html+=("</td>\n");
         html+=("<td>\n");
         //links: download, script, source   
         if(downloadLink!=null && !downloadLink.equals("")){

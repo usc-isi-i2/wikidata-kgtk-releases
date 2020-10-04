@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import com.opencsv.CSVReader;
 import java.util.Arrays;
+import java.util.HashMap;
 
 /**
  * Class for processing vocabularies and converting them to HTML.
@@ -53,19 +54,35 @@ public class MainSiteCreator {
         MainSiteCreator.createFolderStructure(outputFolder.getAbsolutePath());
         String catalogOutPath = outputFolder.getAbsolutePath()+File.separator+TextConstants.siteName;
         String html = TextConstants.getheader(repoName)+TextConstants.getNavBarVocab(repoName);
-        html+=TextConstants.tableHeadVocab;
+        html+= TextConstants.optionsStart;
         try{
-            ArrayList<Dataset> vocs = getCSVRows(pathToCSV);
-            int i=1;
-            for(Dataset v:vocs){
+            DatasetCollection datasetsByVersion = getCSVRows(pathToCSV);
+            HashMap<String,ArrayList<Dataset>> collection = datasetsByVersion.getCollection();
+            for(String version:collection.keySet()){
                 try{
-                    html+=v.getHTMLSerializationAsRow(""+i);
+                    ArrayList<Dataset> datasetsForVersion = collection.get(version);
+                    html+=TextConstants.addOption(version);
+                    //for each of the tables, save them in an HTML file
+                    //get first dataset to extract common metadata
+                    Dataset sample = datasetsForVersion.get(0);
+                    String htmlVersion = "<p>Dataset version <span class=\"label label-primary\">"+sample.getVersion()
+                            + "</span>(created on "+sample.getCreationDate()+"). "
+                            + "License: <a href=\""+sample.getLicense()
+                            + "\"><span class=\"label label-primary\">"
+                            + sample.getLicenseTitle()+"</a></span></p>";
+                    htmlVersion += TextConstants.tableHeadVocab;
+                    int i = 0;
+                    for(Dataset d:datasetsForVersion){
+                        htmlVersion+= d.getHTMLSerializationAsRow(""+i);
+                        i++;
+                    }
+                    htmlVersion += TextConstants.tableEnd;
+                    Utils.saveDocument(outputFolder.getAbsolutePath()+File.separator+"table-"+version+".html", htmlVersion);
                 }catch(Exception e){
-                    System.err.println("Could not process dataset: "+e.getMessage());
+                    System.err.println("Could not process version: "+e.getMessage());
                 }
-                i++;
             }
-            html+=TextConstants.tableEnd+TextConstants.end;//+TextConstants.getScriptForFilteringAndEndDocument(domains);
+            html+=TextConstants.optionsEnd + TextConstants.end;
             Utils.saveDocument(catalogOutPath, html);
         }catch(Exception e){
             System.err.println("Could not create the site: "+e.getMessage());
@@ -73,11 +90,11 @@ public class MainSiteCreator {
         }
     }
 
-    private static ArrayList<Dataset> getCSVRows(String pathToCSV) {
+    private static DatasetCollection getCSVRows(String pathToCSV) {
         String[] colHeaders = null;
         String[] values;
         System.out.println("\nProcessing: "+pathToCSV);
-        ArrayList<Dataset> entries = new ArrayList<>();
+        DatasetCollection collection = new DatasetCollection();
         try{
              CSVReader reader = new CSVReader(new FileReader(pathToCSV));
              while ((values = reader.readNext()) != null){
@@ -100,14 +117,14 @@ public class MainSiteCreator {
                     Dataset d = new Dataset(values[0], values[2], size, values[1], values[4], 
                             values[9], values[8], languages, properties, values[6], values[10], 
                             values[11], values[12], values[14]);
-                    entries.add(d);
+                    collection.addDataset(d);
                 }
              }
         }catch(IOException e){
             System.err.println("Error: "+e.getMessage());
         }            
         //Dataset d = new Dataset("name", "long description goes here",16000, "01012020", "kgt", "CC-0", "CC-0", null, null, "01-10-2000","download","script","preview","source" );
-        return entries;
+        return collection;
     }
     
 }

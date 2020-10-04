@@ -5,22 +5,32 @@
     <title>Repository</title>
     <link rel="stylesheet" href="vocab/themes/blue/style.css" type="text/css" media="print, projection, screen" />
     <script src="vocab/js/jquery.min.js"></script>
-    <script type="text/javascript" src="vocab/js/bootstrap.min.js"></script>
-    <!-- Le styles -->
-    <link href="vocab/css/bootstrap.css" rel="stylesheet">
+    <script type="text/javascript" src="vocab/js/bootstrap.min.js"></script>  <script>
+   $(document).ready(function(){ 
+         $("table").css("visibility", "hidden");
+	    	selectVersion()
+	    	$('[data-toggle="tooltip"]').tooltip(); 
+	    } 
+   );
+   $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+    </script>
+    <script>
+    function selectVersion() {
+      //make all invisible
+      $("table").css("visibility", "hidden");
+      
+      var id_option =  $("#result").val();
+      $("#result_label").load("table-"+id_option+".html"); 
+    }
+</script>    <link href="vocab/css/bootstrap.css" rel="stylesheet">
     <style type="text/css">
       body {
         padding-top: 60px;
         padding-bottom: 40px;
       }
     </style>
-    
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="vocab/js/html5shiv.js"></script>
-    <![endif]-->
-
-    <!-- Fav and touch icons -->
   </head>
 
   <body>
@@ -33,341 +43,16 @@
         <p class="lead">A page for sharing the Wikidata artifacts that are frequently used by the Center on Knowledge Graphs at USC.</p>
       </div>
       <hr>
-<div class="row"> 
-</div>
-<br>
-<table id="tablesorter-demo" class="tablesorter table table-hover table-responsive">
-<thead>
-<tr>
-<th class="col-md-1">Name</th>
-<th class="col-md-3">Description</th>
-<th class="col-md-1">Size</th>
-<th class="col-md-1">Version </th>
-<th class="col-md-1">Properties</th>
-<th class="col-md-1">Language</th>
-<th class="col-md-1">Format</th>
-<th class="col-md-1">Date</th>
-<th class="col-md-1">License</th>
-<th class="col-md-1">Links</th></tr>
-</thead>
-<tbody>
-<tr id="tr1">
-<td> <a href="https://drive.google.com/file/d/1k56ly2dyssyb9i6CNnm4r0_UHnL4uQUL/view?usp=sharing">all.edges</a></td>
-<td>
-A file with all edges in Wikidata.</td>
-<td>16.0 GB</td><td><span class="label label-primary">20200504</td><td><span class="label label-primary">all</span> &nbsp;</td><td><span class="label label-primary">all</span></td>
-<td>kgtk (.gz)</td><td>5/20/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/1k56ly2dyssyb9i6CNnm4r0_UHnL4uQUL/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://drive.google.com/file/d/1Aq3HO3OJvcifG_P9XHcFpVqUjaAv01Cb/view?usp=sharing"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr2">
-<td> <a href="https://drive.google.com/file/d/1kTiyCHgH0HSmrDUjvBCBLtCGXX6vPSPO/view?usp=sharing">all.nodes</a>&nbsp;<a href="https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/previsualization/nodes.all.txt"><span class="glyphicon glyphicon-search" aria-hidden="true" data-toggle="tooltip" title="Previsualize" ></span></a></td>
-<td>
-<p id="collapse2" data-toggle="collapse" >
-A file with all nodes in Wikidata, including their ... <a class="more2">See more</a>
-</p>
-<script>
-$('#collapse2').click(function () {
-if($('a').hasClass('more2'))
-{
-$('#collapse2').html('A file with all nodes in Wikidata, including their English labels and aliases.  <a class="less2">See less<a>'); 
-}
-else
-{      
-$('#collapse2').html('A file with all nodes in Wikidata, including their ...  <a  class="more2">See more</a>'); 
-}
-}); 
-</script>
-</td>
-<td>2.0 GB</td><td><span class="label label-primary">20200504</td><td><span class="label label-primary">all</span> &nbsp;</td><td><span class="label label-primary">en</span></td>
-<td>kgtk (.gz)</td><td>5/11/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/1kTiyCHgH0HSmrDUjvBCBLtCGXX6vPSPO/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://drive.google.com/file/d/1Aq3HO3OJvcifG_P9XHcFpVqUjaAv01Cb/view?usp=sharing"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr3">
-<td> <a href="https://drive.google.com/file/d/1k7Rd5UQ87FctjbXPyLIowweIYgjJtP8I/view?usp=sharing">all.qualifiers</a></td>
-<td>
-A file with all qualifiers in Wikidata.</td>
-<td>2.0 GB</td><td><span class="label label-primary">20200504</td><td><span class="label label-primary">all</span> &nbsp;</td><td><span class="label label-primary">all</span></td>
-<td>kgtk (.gz)</td><td>5/11/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/1k7Rd5UQ87FctjbXPyLIowweIYgjJtP8I/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://drive.google.com/file/d/1Aq3HO3OJvcifG_P9XHcFpVqUjaAv01Cb/view?usp=sharing"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr4">
-<td> <a href="https://drive.google.com/file/d/1l500ihG2vNdp7VDZ8A-U2Qrry67Ua--i/view?usp=sharing">nodes.pagerank</a></td>
-<td>
-A file with only PageRank values for each node in Wikidata.</td>
-<td>886.0 MB</td><td><span class="label label-primary">20200504</td><td><span class="label label-primary">all</span> &nbsp;</td><td><span class="label label-primary"></span></td>
-<td>kgtk (.gz)</td><td>6/5/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/1l500ihG2vNdp7VDZ8A-U2Qrry67Ua--i/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://drive.google.com/file/d/1Aq3HO3OJvcifG_P9XHcFpVqUjaAv01Cb/view?usp=sharing"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr5">
-<td> <a href="https://drive.google.com/file/d/1kIvzzi3jaCO4EJwwyHw-Q_hf3Ge0iG0y/view?usp=sharing">edges.P31</a></td>
-<td>
-A file with all P31 (instance-of) edges in Wikidata.</td>
-<td>500.0 MB</td><td><span class="label label-primary">20200504</td><td><span class="label label-primary">P31</span> &nbsp;</td><td><span class="label label-primary">all</span></td>
-<td>kgtk (.gz)</td><td>5/11/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/1kIvzzi3jaCO4EJwwyHw-Q_hf3Ge0iG0y/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://drive.google.com/file/d/1Aq3HO3OJvcifG_P9XHcFpVqUjaAv01Cb/view?usp=sharing"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr6">
-<td> <a href="https://drive.google.com/file/d/1VeD8jsq3W6xqJTDe6zetBHz_roO3oHoJ/view?usp=sharing">all.alias.en</a>&nbsp;<a href="https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/previsualization/20200803-v2/all.alias.en.tsv.gz.sample.tsv"><span class="glyphicon glyphicon-search" aria-hidden="true" data-toggle="tooltip" title="Previsualize" ></span></a></td>
-<td>
-A file with all the aliases in Wikidata in English</td>
-<td>106.0 MB</td><td><span class="label label-primary">20200803-v2</td><td><span class="label label-primary"></span> &nbsp;</td><td><span class="label label-primary">en</span></td>
-<td>kgtk (.gz)</td><td>3/8/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/1VeD8jsq3W6xqJTDe6zetBHz_roO3oHoJ/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://github.com/usc-isi-i2/kgtk/blob/dev/examples/Example7%20-%20Wikidata%20Outputs.ipynb"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr7">
-<td> <a href="https://drive.google.com/file/d/1wx1MdxTwcGFzaHnwo7x2hogZy3z6_XBk/view?usp=sharing">all.alias</a>&nbsp;<a href="https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/previsualization/20200803-v2/all.alias.tsv.gz.sample.tsv"><span class="glyphicon glyphicon-search" aria-hidden="true" data-toggle="tooltip" title="Previsualize" ></span></a></td>
-<td>
-A file with all the aliases in Wikidata</td>
-<td>737.0 MB</td><td><span class="label label-primary">20200803-v2</td><td><span class="label label-primary"></span> &nbsp;</td><td><span class="label label-primary">all</span></td>
-<td>kgtk (.gz)</td><td>3/8/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/1wx1MdxTwcGFzaHnwo7x2hogZy3z6_XBk/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://github.com/usc-isi-i2/kgtk/blob/dev/examples/Example7%20-%20Wikidata%20Outputs.ipynb"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr8">
-<td> <a href="https://drive.google.com/file/d/10Hv6fg8R6GOFcIlMHKpmOSvtUkggToRQ/view?usp=sharing">all.commonsMedia</a>&nbsp;<a href="https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/previsualization/20200803-v2/all.commonsMedia.tsv.gz.sample.tsv"><span class="glyphicon glyphicon-search" aria-hidden="true" data-toggle="tooltip" title="Previsualize" ></span></a></td>
-<td>
-File with all the commonsMedia instances in Wikidata</td>
-<td>105.0 MB</td><td><span class="label label-primary">20200803-v2</td><td><span class="label label-primary"></span> &nbsp;</td><td><span class="label label-primary">all</span></td>
-<td>kgtk (.gz)</td><td>3/8/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/10Hv6fg8R6GOFcIlMHKpmOSvtUkggToRQ/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://github.com/usc-isi-i2/kgtk/blob/dev/examples/Example7%20-%20Wikidata%20Outputs.ipynb"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr9">
-<td> <a href="https://drive.google.com/file/d/1dXqRw5hSVhVDGVHQ10nAxhsYFyucANLh/view?usp=sharing">all.description.en</a>&nbsp;<a href="https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/previsualization/20200803-v2/all.description.en.tsv.gz.sample.tsv"><span class="glyphicon glyphicon-search" aria-hidden="true" data-toggle="tooltip" title="Previsualize" ></span></a></td>
-<td>
-File with all English descriptions in Wikidata</td>
-<td>989.0 MB</td><td><span class="label label-primary">20200803-v2</td><td><span class="label label-primary"></span> &nbsp;</td><td><span class="label label-primary">en</span></td>
-<td>kgtk (.gz)</td><td>3/8/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/1dXqRw5hSVhVDGVHQ10nAxhsYFyucANLh/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://github.com/usc-isi-i2/kgtk/blob/dev/examples/Example7%20-%20Wikidata%20Outputs.ipynb"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr10">
-<td> <a href="https://drive.google.com/file/d/16Fx1E_TkSOXnn3D7ErQfPT2pq5kyeNLE/view?usp=sharing">all.description</a>&nbsp;<a href="https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/previsualization/20200803-v2/all.description.tsv.gz.sample.tsv"><span class="glyphicon glyphicon-search" aria-hidden="true" data-toggle="tooltip" title="Previsualize" ></span></a></td>
-<td>
-File with all descriptions in Wikidata</td>
-<td>20.0 GB</td><td><span class="label label-primary">20200803-v2</td><td><span class="label label-primary"></span> &nbsp;</td><td><span class="label label-primary">all</span></td>
-<td>kgtk (.gz)</td><td>3/8/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/16Fx1E_TkSOXnn3D7ErQfPT2pq5kyeNLE/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://github.com/usc-isi-i2/kgtk/blob/dev/examples/Example7%20-%20Wikidata%20Outputs.ipynb"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr11">
-<td> <a href="https://drive.google.com/file/d/1ebeUL9IBQ50K68Nzk2kw9pfh8wYFjOWo/view?usp=sharing">all.external-id</a>&nbsp;<a href="https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/previsualization/20200803-v2/all.alias.en.tsv.gz.sample.tsv"><span class="glyphicon glyphicon-search" aria-hidden="true" data-toggle="tooltip" title="Previsualize" ></span></a></td>
-<td>
-File with all external ids in Wikidata</td>
-<td>2.0 GB</td><td><span class="label label-primary">20200803-v2</td><td><span class="label label-primary"></span> &nbsp;</td><td><span class="label label-primary"></span></td>
-<td>kgtk (.gz)</td><td>3/8/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/1ebeUL9IBQ50K68Nzk2kw9pfh8wYFjOWo/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://github.com/usc-isi-i2/kgtk/blob/dev/examples/Example7%20-%20Wikidata%20Outputs.ipynb"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr12">
-<td> <a href="https://drive.google.com/file/d/1qLt_d0Hd4feTJQHByeRpg4RI8QC-ESkh/view?usp=sharing">all.geo-shape</a>&nbsp;<a href="https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/previsualization/20200803-v2/all.geo-shape.tsv.gz.sample.tsv"><span class="glyphicon glyphicon-search" aria-hidden="true" data-toggle="tooltip" title="Previsualize" ></span></a></td>
-<td>
-File with all the geoshapes in Wikidata</td>
-<td>0.415 MB</td><td><span class="label label-primary">20200803-v2</td><td><span class="label label-primary"></span> &nbsp;</td><td><span class="label label-primary"></span></td>
-<td>kgtk (.gz)</td><td>3/8/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/1qLt_d0Hd4feTJQHByeRpg4RI8QC-ESkh/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://github.com/usc-isi-i2/kgtk/blob/dev/examples/Example7%20-%20Wikidata%20Outputs.ipynb"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr13">
-<td> <a href="https://drive.google.com/file/d/1L9H_Nt8f0haQydXO-f-_veEszar7n_qd/view?usp=sharing">all.globe-coordinate</a>&nbsp;<a href="https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/previsualization/20200803-v2/all.globe-coordinate.tsv.gz.sample.tsv"><span class="glyphicon glyphicon-search" aria-hidden="true" data-toggle="tooltip" title="Previsualize" ></span></a></td>
-<td>
-File with all globe coordinates in Wikidata</td>
-<td>122.0 MB</td><td><span class="label label-primary">20200803-v2</td><td><span class="label label-primary"></span> &nbsp;</td><td><span class="label label-primary"></span></td>
-<td>kgtk (.gz)</td><td>3/8/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/1L9H_Nt8f0haQydXO-f-_veEszar7n_qd/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://github.com/usc-isi-i2/kgtk/blob/dev/examples/Example7%20-%20Wikidata%20Outputs.ipynb"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr14">
-<td> <a href="https://drive.google.com/file/d/1Op_p2VCLkz-HlP-mBqo7LOOrkjXhIDIf/view?usp=sharing">all.isa</a>&nbsp;<a href="https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/previsualization/20200803-v2/all.isa.tsv.gz.sample.tsv"><span class="glyphicon glyphicon-search" aria-hidden="true" data-toggle="tooltip" title="Previsualize" ></span></a></td>
-<td>
-File with all is-a relationships in Wikidata</td>
-<td>318.0 MB</td><td><span class="label label-primary">20200803-v2</td><td><span class="label label-primary"></span> &nbsp;</td><td><span class="label label-primary"></span></td>
-<td>kgtk (.gz)</td><td>3/8/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/1Op_p2VCLkz-HlP-mBqo7LOOrkjXhIDIf/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://github.com/usc-isi-i2/kgtk/blob/dev/examples/Example7%20-%20Wikidata%20Outputs.ipynb"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr15">
-<td> <a href="https://drive.google.com/file/d/1N9VyRMuGSD98AfuMtaEdzsnUJlxqslHI/view?usp=sharing">all.label.en</a>&nbsp;<a href="https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/previsualization/20200803-v2/all.label.en.tsv.gz.sample.tsv"><span class="glyphicon glyphicon-search" aria-hidden="true" data-toggle="tooltip" title="Previsualize" ></span></a></td>
-<td>
-File with all English labels in Wikidata</td>
-<td>2.0 GB</td><td><span class="label label-primary">20200803-v2</td><td><span class="label label-primary"></span> &nbsp;</td><td><span class="label label-primary">en</span></td>
-<td>kgtk (.gz)</td><td>3/8/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/1N9VyRMuGSD98AfuMtaEdzsnUJlxqslHI/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://github.com/usc-isi-i2/kgtk/blob/dev/examples/Example7%20-%20Wikidata%20Outputs.ipynb"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr16">
-<td> <a href="https://drive.google.com/file/d/1zXRRlKkPapnwlMYJXcFwxmqobnHsig5_/view?usp=sharing">all.label</a>&nbsp;<a href="https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/previsualization/20200803-v2/all.label.tsv.gz.sample.tsv"><span class="glyphicon glyphicon-search" aria-hidden="true" data-toggle="tooltip" title="Previsualize" ></span></a></td>
-<td>
-File with all labels in Wikidata (all languages)</td>
-<td>6.0 GB</td><td><span class="label label-primary">20200803-v2</td><td><span class="label label-primary"></span> &nbsp;</td><td><span class="label label-primary">all</span></td>
-<td>kgtk (.gz)</td><td>3/8/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/1zXRRlKkPapnwlMYJXcFwxmqobnHsig5_/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://github.com/usc-isi-i2/kgtk/blob/dev/examples/Example7%20-%20Wikidata%20Outputs.ipynb"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr17">
-<td> <a href="https://drive.google.com/file/d/1yuKk7mkcZTF-OSgdZ2xupkQx1ZAZI7e8/view?usp=sharing">all.math</a>&nbsp;<a href="https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/previsualization/20200803-v2/all.math.tsv.gz.sample.tsv"><span class="glyphicon glyphicon-search" aria-hidden="true" data-toggle="tooltip" title="Previsualize" ></span></a></td>
-<td>
-File with all math expresions in Wikidata</td>
-<td>0.408 MB</td><td><span class="label label-primary">20200803-v2</td><td><span class="label label-primary"></span> &nbsp;</td><td><span class="label label-primary"></span></td>
-<td>kgtk (.gz)</td><td>3/8/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/1yuKk7mkcZTF-OSgdZ2xupkQx1ZAZI7e8/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://github.com/usc-isi-i2/kgtk/blob/dev/examples/Example7%20-%20Wikidata%20Outputs.ipynb"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr18">
-<td> <a href="https://drive.google.com/file/d/1PVa_OiZDs8zURoknCnCJJnxl31vHXwuu/view?usp=sharing">all.monolingualtext</a>&nbsp;<a href="https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/previsualization/20200803-v2/all.monolingualtext.tsv.gz.sample.tsv"><span class="glyphicon glyphicon-search" aria-hidden="true" data-toggle="tooltip" title="Previsualize" ></span></a></td>
-<td>
-File with all monolingual text in Wikidata</td>
-<td>2.0 GB</td><td><span class="label label-primary">20200803-v2</td><td><span class="label label-primary"></span> &nbsp;</td><td><span class="label label-primary">all</span></td>
-<td>kgtk (.gz)</td><td>3/8/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/1PVa_OiZDs8zURoknCnCJJnxl31vHXwuu/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://github.com/usc-isi-i2/kgtk/blob/dev/examples/Example7%20-%20Wikidata%20Outputs.ipynb"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr19">
-<td> <a href="https://drive.google.com/file/d/1EPweh09YgnJ2BopS6XYhVB1WqI1fpuA9/view?usp=sharing">all.musical-notation</a>&nbsp;<a href="https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/previsualization/20200803-v2/all.musical-notation.tsv.gz.sample.tsv"><span class="glyphicon glyphicon-search" aria-hidden="true" data-toggle="tooltip" title="Previsualize" ></span></a></td>
-<td>
-File with all musical notation in Wikidata</td>
-<td>0.017 MB</td><td><span class="label label-primary">20200803-v2</td><td><span class="label label-primary"></span> &nbsp;</td><td><span class="label label-primary"></span></td>
-<td>kgtk (.gz)</td><td>3/8/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/1EPweh09YgnJ2BopS6XYhVB1WqI1fpuA9/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://github.com/usc-isi-i2/kgtk/blob/dev/examples/Example7%20-%20Wikidata%20Outputs.ipynb"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr20">
-<td> <a href="https://drive.google.com/file/d/1qkrMzN38LVBFI9fsIUaWbrVE6Tw4bEQ5/view?usp=sharing">all.P31</a>&nbsp;<a href="https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/previsualization/20200803-v2/all.P31.tsv.gz.sample.tsv"><span class="glyphicon glyphicon-search" aria-hidden="true" data-toggle="tooltip" title="Previsualize" ></span></a></td>
-<td>
-File with all P31 poperties in Wikidata (instance of)</td>
-<td>518.0 MB</td><td><span class="label label-primary">20200803-v2</td><td><span class="label label-primary">P31</span> &nbsp;</td><td><span class="label label-primary">all</span></td>
-<td>kgtk (.gz)</td><td>3/8/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/1qkrMzN38LVBFI9fsIUaWbrVE6Tw4bEQ5/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://github.com/usc-isi-i2/kgtk/blob/dev/examples/Example7%20-%20Wikidata%20Outputs.ipynb"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr21">
-<td> <a href="https://drive.google.com/file/d/128Q3UkV1CJ4V0k4uq-BjSR1dBOLitkhC/view?usp=sharing">all.P31_P279</a>&nbsp;<a href="https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/previsualization/20200803-v2/all.P31_P279.tsv.gz.sample.tsv"><span class="glyphicon glyphicon-search" aria-hidden="true" data-toggle="tooltip" title="Previsualize" ></span></a></td>
-<td>
-<p id="collapse21" data-toggle="collapse" >
-File with all P31 (instance of) and P279 (subclass ... <a class="more21">See more</a>
-</p>
-<script>
-$('#collapse21').click(function () {
-if($('a').hasClass('more21'))
-{
-$('#collapse21').html('File with all P31 (instance of) and P279 (subclass of) in Wikidata  <a class="less21">See less<a>'); 
-}
-else
-{      
-$('#collapse21').html('File with all P31 (instance of) and P279 (subclass ...  <a  class="more21">See more</a>'); 
-}
-}); 
-</script>
-</td>
-<td>498.0 MB</td><td><span class="label label-primary">20200803-v2</td><td><span class="label label-primary">P31</span> &nbsp;<span class="label label-primary">P279</span> &nbsp;</td><td><span class="label label-primary">all</span></td>
-<td>kgtk (.gz)</td><td>3/8/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/128Q3UkV1CJ4V0k4uq-BjSR1dBOLitkhC/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://github.com/usc-isi-i2/kgtk/blob/dev/examples/Example7%20-%20Wikidata%20Outputs.ipynb"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr22">
-<td> <a href="https://drive.google.com/file/d/1EkBCXR0yqYbo-8M6uXF-0YvbaW9OBrY4/view?usp=sharing">all.P279</a>&nbsp;<a href="https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/previsualization/20200803-v2/all.P279.tsv.gz.sample.tsv"><span class="glyphicon glyphicon-search" aria-hidden="true" data-toggle="tooltip" title="Previsualize" ></span></a></td>
-<td>
-File with all the P279 properties in Wikidata (subclass of)</td>
-<td>20.0 MB</td><td><span class="label label-primary">20200803-v2</td><td><span class="label label-primary">P279</span> &nbsp;</td><td><span class="label label-primary">all</span></td>
-<td>kgtk (.gz)</td><td>3/8/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/1EkBCXR0yqYbo-8M6uXF-0YvbaW9OBrY4/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://github.com/usc-isi-i2/kgtk/blob/dev/examples/Example7%20-%20Wikidata%20Outputs.ipynb"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr23">
-<td> <a href="https://drive.google.com/file/d/1dWUYgMXqvHj6vdSNQk_FC5nBq61iYZLv/view?usp=sharing">all.P279star</a>&nbsp;<a href="https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/previsualization/20200803-v2/all.P279star.tsv.gz.sample.tsv"><span class="glyphicon glyphicon-search" aria-hidden="true" data-toggle="tooltip" title="Previsualize" ></span></a></td>
-<td>
-<p id="collapse23" data-toggle="collapse" >
-File with the transitive closure of the P279 property ... <a class="more23">See more</a>
-</p>
-<script>
-$('#collapse23').click(function () {
-if($('a').hasClass('more23'))
-{
-$('#collapse23').html('File with the transitive closure of the P279 property (subclass of) in Wikidata  <a class="less23">See less<a>'); 
-}
-else
-{      
-$('#collapse23').html('File with the transitive closure of the P279 property ...  <a  class="more23">See more</a>'); 
-}
-}); 
-</script>
-</td>
-<td>517.0 MB</td><td><span class="label label-primary">20200803-v2</td><td><span class="label label-primary">P279*</span> &nbsp;</td><td><span class="label label-primary">all</span></td>
-<td>kgtk (.gz)</td><td>3/8/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/1dWUYgMXqvHj6vdSNQk_FC5nBq61iYZLv/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://github.com/usc-isi-i2/kgtk/blob/dev/examples/Example7%20-%20Wikidata%20Outputs.ipynb"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr24">
-<td> <a href="https://drive.google.com/file/d/1rGY1zEDJXmAfjqXQmdPyr0phXWYcOMrB/view?usp=sharing">all.quantity</a>&nbsp;<a href="https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/previsualization/20200803-v2/all.quantity.tsv.gz.sample.tsv"><span class="glyphicon glyphicon-search" aria-hidden="true" data-toggle="tooltip" title="Previsualize" ></span></a></td>
-<td>
-File with all quantities in Wikidata</td>
-<td>1.0 GB</td><td><span class="label label-primary">20200803-v2</td><td><span class="label label-primary"></span> &nbsp;</td><td><span class="label label-primary"></span></td>
-<td>kgtk (.gz)</td><td>3/8/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/1rGY1zEDJXmAfjqXQmdPyr0phXWYcOMrB/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://github.com/usc-isi-i2/kgtk/blob/dev/examples/Example7%20-%20Wikidata%20Outputs.ipynb"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr25">
-<td> <a href="https://drive.google.com/file/d/1vbAWmjBCxHbSHuykn14ieCJKttyArIgL/view?usp=sharing">all.string</a>&nbsp;<a href="https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/previsualization/20200803-v2/all.string.tsv.gz.sample.tsv"><span class="glyphicon glyphicon-search" aria-hidden="true" data-toggle="tooltip" title="Previsualize" ></span></a></td>
-<td>
-File with all string literals in Wikidata</td>
-<td>3.0 GB</td><td><span class="label label-primary">20200803-v2</td><td><span class="label label-primary"></span> &nbsp;</td><td><span class="label label-primary">all</span></td>
-<td>kgtk (.gz)</td><td>3/8/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/1vbAWmjBCxHbSHuykn14ieCJKttyArIgL/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://github.com/usc-isi-i2/kgtk/blob/dev/examples/Example7%20-%20Wikidata%20Outputs.ipynb"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr26">
-<td> <a href="https://drive.google.com/file/d/1MpzxBFWwkJd2BU3boFYktzmMuchby9nW/view?usp=sharing">all.time</a>&nbsp;<a href="https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/previsualization/20200803-v2/all.time.tsv.gz.sample.tsv"><span class="glyphicon glyphicon-search" aria-hidden="true" data-toggle="tooltip" title="Previsualize" ></span></a></td>
-<td>
-File with all the time literals in Wikidata</td>
-<td>423.0 MB</td><td><span class="label label-primary">20200803-v2</td><td><span class="label label-primary"></span> &nbsp;</td><td><span class="label label-primary"></span></td>
-<td>kgtk (.gz)</td><td>3/8/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/1MpzxBFWwkJd2BU3boFYktzmMuchby9nW/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://github.com/usc-isi-i2/kgtk/blob/dev/examples/Example7%20-%20Wikidata%20Outputs.ipynb"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr27">
-<td> <a href="https://drive.google.com/file/d/15TqNB8ibVuBJl6xTpUC9ImezReyvyQ1P/view?usp=sharing">all.type</a>&nbsp;<a href="https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/previsualization/20200803-v2/all.type.tsv.gz.sample.tsv"><span class="glyphicon glyphicon-search" aria-hidden="true" data-toggle="tooltip" title="Previsualize" ></span></a></td>
-<td>
-File with all the type in Wikidata</td>
-<td>462.0 MB</td><td><span class="label label-primary">20200803-v2</td><td><span class="label label-primary"></span> &nbsp;</td><td><span class="label label-primary">all</span></td>
-<td>kgtk (.gz)</td><td>3/8/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/15TqNB8ibVuBJl6xTpUC9ImezReyvyQ1P/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://github.com/usc-isi-i2/kgtk/blob/dev/examples/Example7%20-%20Wikidata%20Outputs.ipynb"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr28">
-<td> <a href="https://drive.google.com/file/d/1TBqLXd0oexIPj4g-Ua0NUvFZUY_z9edE/view?usp=sharing">all.url</a>&nbsp;<a href="https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/previsualization/20200803-v2/all.url.tsv.gz.sample.tsv"><span class="glyphicon glyphicon-search" aria-hidden="true" data-toggle="tooltip" title="Previsualize" ></span></a></td>
-<td>
-File with all the URL literals in Wikidata</td>
-<td>102.0 MB</td><td><span class="label label-primary">20200803-v2</td><td><span class="label label-primary"></span> &nbsp;</td><td><span class="label label-primary"></span></td>
-<td>kgtk (.gz)</td><td>3/8/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/1TBqLXd0oexIPj4g-Ua0NUvFZUY_z9edE/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://github.com/usc-isi-i2/kgtk/blob/dev/examples/Example7%20-%20Wikidata%20Outputs.ipynb"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr29">
-<td> <a href="https://drive.google.com/file/d/1ZuMIDQYJzvdIwIRRzbXtSrdsazC8Fjem/view?usp=sharing">all.wikibase-form</a>&nbsp;<a href="https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/previsualization/20200803-v2/all.wikibase-form.tsv.gz.sample.tsv"><span class="glyphicon glyphicon-search" aria-hidden="true" data-toggle="tooltip" title="Previsualize" ></span></a></td>
-<td>
-File with all wikibase form literals in Wikidata</td>
-<td>0.004 MB</td><td><span class="label label-primary">20200803-v2</td><td><span class="label label-primary"></span> &nbsp;</td><td><span class="label label-primary"></span></td>
-<td>kgtk (.gz)</td><td>3/8/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/1ZuMIDQYJzvdIwIRRzbXtSrdsazC8Fjem/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://github.com/usc-isi-i2/kgtk/blob/dev/examples/Example7%20-%20Wikidata%20Outputs.ipynb"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr30">
-<td> <a href="https://drive.google.com/file/d/1db313QsaiPn9-FZUm4j8ce7mAng_wDkL/view?usp=sharing">all.wikibase-item</a>&nbsp;<a href="https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/previsualization/20200803-v2/all.wikibase-item.tsv.gz.sample.tsv"><span class="glyphicon glyphicon-search" aria-hidden="true" data-toggle="tooltip" title="Previsualize" ></span></a></td>
-<td>
-File with all wikibase items in Wikidata</td>
-<td>4.0 GB</td><td><span class="label label-primary">20200803-v2</td><td><span class="label label-primary"></span> &nbsp;</td><td><span class="label label-primary"></span></td>
-<td>kgtk (.gz)</td><td>3/8/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/1db313QsaiPn9-FZUm4j8ce7mAng_wDkL/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://github.com/usc-isi-i2/kgtk/blob/dev/examples/Example7%20-%20Wikidata%20Outputs.ipynb"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr31">
-<td> <a href="https://drive.google.com/file/d/1W2ze56K1oD2HdZ8ZBgUfgkfhraUg7KFl/view?usp=sharing">all.wikibase-property</a>&nbsp;<a href="https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/previsualization/20200803-v2/all.wikibase-property.tsv.gz.sample.tsv"><span class="glyphicon glyphicon-search" aria-hidden="true" data-toggle="tooltip" title="Previsualize" ></span></a></td>
-<td>
-File with all wikibase properties in Wikidata</td>
-<td>0.25 MB</td><td><span class="label label-primary">20200803-v2</td><td><span class="label label-primary"></span> &nbsp;</td><td><span class="label label-primary"></span></td>
-<td>kgtk (.gz)</td><td>3/8/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/1W2ze56K1oD2HdZ8ZBgUfgkfhraUg7KFl/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://github.com/usc-isi-i2/kgtk/blob/dev/examples/Example7%20-%20Wikidata%20Outputs.ipynb"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr32">
-<td> <a href="https://drive.google.com/file/d/1WbquBKN0pFwg-kAlCRVB5-lkwTMnaiSp/view?usp=sharing">all.wikidatatype.distribution</a>&nbsp;<a href="https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/previsualization/20200803-v2/all.wikidatatype.distribution.tsv.gz.sample.tsv"><span class="glyphicon glyphicon-search" aria-hidden="true" data-toggle="tooltip" title="Previsualize" ></span></a></td>
-<td>
-File with all distribution wikidatatypes in Wikidata</td>
-<td>0.002 MB</td><td><span class="label label-primary">20200803-v2</td><td><span class="label label-primary"></span> &nbsp;</td><td><span class="label label-primary"></span></td>
-<td>kgtk (.gz)</td><td>3/8/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/1WbquBKN0pFwg-kAlCRVB5-lkwTMnaiSp/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://github.com/usc-isi-i2/kgtk/blob/dev/examples/Example7%20-%20Wikidata%20Outputs.ipynb"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr><tr id="tr33">
-<td> <a href="https://drive.google.com/file/d/16shh6YSe9_9zoKNGudO89Ocsd3R1z8eM/view?usp=sharing">all.wikipedia_sitelink</a>&nbsp;<a href="https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/previsualization/20200803-v2/all.wikipedia_sitelink.tsv.gz.sample.tsv"><span class="glyphicon glyphicon-search" aria-hidden="true" data-toggle="tooltip" title="Previsualize" ></span></a></td>
-<td>
-File with all wikipedia sitelinks in Wikidata</td>
-<td>864.0 MB</td><td><span class="label label-primary">20200803-v2</td><td><span class="label label-primary"></span> &nbsp;</td><td><span class="label label-primary"></span></td>
-<td>kgtk (.gz)</td><td>3/8/2020</td><td><a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"> <span class="label label-success">CC-0</span> </a></td>
-<td>
-<a href="https://drive.google.com/file/d/16shh6YSe9_9zoKNGudO89Ocsd3R1z8eM/view?usp=sharing"><span class="glyphicon glyphicon-download" aria-hidden="true" data-toggle="tooltip" title="Download"></span></a>&nbsp;<a href="https://github.com/usc-isi-i2/kgtk/blob/dev/examples/Example7%20-%20Wikidata%20Outputs.ipynb"><span class="glyphicon glyphicon-wrench" aria-hidden="true" data-toggle="tooltip" title="Download script"></span></a></td>
-</tr></tbody></table>
-<hr>
-           <footer class="footer">
-	        Latest revision Sep 28, 2020
+<form><div class="form-group">
+      <label for="result">Select the version of Wikidata your are interested in from the list below:</label>
+      <select class="form-control" id="result" onchange="selectVersion()"><option value="20200504">Version 20200504</option><option value="20200803-v2">Version 20200803-v2</option></select>
+      
+    </div>
+  </form><hr>
+  <p>
+<span id="result_label"></id>
+</p>           <footer class="footer">
+	        Latest revision Oct 4, 2020
       </footer>      </div>
 </div> <!-- /container -->
- <script>
-$(document).ready(function(){
-  $('[data-toggle="tooltip"]').tooltip();   
-});
-</script></body></html>
+</body></html>
