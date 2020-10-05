@@ -21,7 +21,7 @@ public class TextConstants {
         return "site_"+new Date().getTime();
     }
     public static final String vocabResources = "/vocab.zip"; 
-    public static final int SHORT_DESC_LENGTH = 65;//140;
+    public static final int SHORT_DESC_LENGTH = 75;//140;
     public static final int shortLicense = 30;   
     
     

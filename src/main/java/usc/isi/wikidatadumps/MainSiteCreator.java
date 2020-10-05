@@ -66,7 +66,7 @@ public class MainSiteCreator {
                     //get first dataset to extract common metadata
                     Dataset sample = datasetsForVersion.get(0);
                     String htmlVersion = "<p>Dataset version <span class=\"label label-primary\">"+sample.getVersion()
-                            + "</span>(created on "+sample.getCreationDate()+"). "
+                            + "</span>. " //(created on "+sample.getCreationDate()+")
                             + "License: <a href=\""+sample.getLicense()
                             + "\"><span class=\"label label-primary\">"
                             + sample.getLicenseTitle()+"</a></span></p>";
