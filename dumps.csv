@@ -35,4 +35,5 @@ all.wikipedia_sitelink,20200803-v2,File with all wikipedia sitelinks in Wikidata
 all.datatypes,20200803-v3,File with counts of claim edges in Wikidata grouped by Wikidata datatype,,kgtk,0.0004,10/24/2020,,,,,,,,
 all.full,20200803-v3,File with all claim edges in Wikidata with additional metadata columns,,kgtk (.gz),51000,10/23/2020,,,,,,,,
 all,20200803-v3,File with all claim edges with rank and Wikidata datatype columns,,kgtk (.gz),23000,10/23/2020,,,,,,,,
-node,20200803-v3,File with all Wikidata item and property identifiers (Qnnn and Pnnn),,kgtk (.gz),185,10/23/2020,,,,,,,,
+node,20200803-v3,File with all Wikidata entity IDs: item (Q####) and property (P####),,kgtk (.gz),185,10/23/2020,,,,,,,,
+part.alias.en,20200803-v3,File with Wikidata entity aliases in English,en,kgtk (.gz),124,10/23/2020,,,,,,,,
