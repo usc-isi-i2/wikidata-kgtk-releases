@@ -36,4 +36,4 @@ all.datatypes,20200803-v3,File with counts of claim edges in Wikidata grouped by
 all.full,20200803-v3,File with all claim edges in Wikidata with additional metadata columns,,kgtk (.gz),51000,10/23/2020,,,,,,,,
 all,20200803-v3,File with all claim edges with rank and Wikidata datatype columns,,kgtk (.gz),23000,10/23/2020,,,,,,,,
 node,20200803-v3,File with all Wikidata entity IDs: item (Q####) and property (P####),,kgtk (.gz),185,10/23/2020,,,,,,,,
-part.alias.en,20200803-v3,File with all Wikidata entity aliases in English,en,kgtk (.gz),124,10/23/2020,,,,,,,,
+part.alias.en,20200803-v3,File with all Wikidata entity aliases in English,,kgtk (.gz),124,10/23/2020,,,,,,,,
