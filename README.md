@@ -10,7 +10,7 @@ Simply fill in a new row in the `dumps.csv` file of the repository. Then regener
 
 ## Website
 
-https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/index.html
+[https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/index.html](https://usc-isi-i2.github.io/wikidata-kgtk-releases/website/index.html)
 
 
 
