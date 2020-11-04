@@ -226,7 +226,16 @@ public class Dataset {
         html+=("<td>");
         if (size<1000){
             if(size>0){ //if it's <0, then size undefined
-                html+=size+" MB";
+                String unitlabel = "MB";
+                if(size<1){
+                    size = size*1000;
+                    unitlabel = "KB";
+                    if(size <1){
+                        size = size*1000;
+                        unitlabel = "B";
+                    }
+                }
+                html+=size+" "+unitlabel;
             }
         }
         else{
